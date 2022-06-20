@@ -1,0 +1,22 @@
+[
+  {
+    "topicId": "faec19ef-a473-47cb-8fc4-72ec7e7e6758",
+    "voters": [
+      0,
+      1
+    ]
+  },
+  {
+    "topicId": "4c62138f-368b-433d-b4f0-db4d9abaed62",
+    "voters": [
+      1,
+      0
+    ]
+  },
+  {
+    "topicId": "d79b2bcc-9133-4647-9a46-dbc4304e5161",
+    "voters": [
+      0
+    ]
+  }
+]

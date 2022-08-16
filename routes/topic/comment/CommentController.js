@@ -1,8 +1,8 @@
-const Response = require('../dataModel/Response')
-const Comment = require('../dataModel/Comment')
-const Strings = require('../assets/Strings')
-const comments = require('../db/comments.json')
-const {writeItemOnFile} = require('../globalFunction/db')
+const Response = require('../../../dataModel/ResponseDataModel')
+const CommentController = require('./CommentDataModel')
+const Strings = require('../../../assets/Strings')
+const comments = require('../../../db/comments.json')
+const {writeItemOnFile} = require('../../../globalFunction/db')
 const  path = require('path')
 
 
@@ -33,7 +33,7 @@ const createNewCmnt= async (req,res)=>{
         const {text}= req.body
         const {topicID}= req.params
         if (text){
-            const newCmnt = new Comment(text,topicID,req.headers.token)
+            const newCmnt = new CommentController(text,topicID,req.headers.token)
             await  writeItemOnFile(`${path.resolve()}/db/comments.json`,newCmnt.getDBVersionComment())
             res.status(201).send(new Response(201," comment created", newCmnt.getComment()).getResponse())
 

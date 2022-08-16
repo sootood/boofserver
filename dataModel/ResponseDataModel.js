@@ -1,33 +1,33 @@
-
-function _getSuitMessage(type) {
+const Strings = require('../assets/Strings')
+function _getSuitMessage(type,text,path) {
     switch (type) {
         case 200 :
-            return 'success';
-
+            return Strings.Success;
         case 201:
-            return 'created'
+            return Strings.Created
         case 404:
-            return 'not Found'
+            return Strings.NotFound
         case 400:
-            return 'bad request'
-
+            return Strings.BadReq
 
     }
 }
 
-class Response {
+class ResponseDataModel {
 
     constructor(...args) {
         this.data = args[2]
         this.description = args[1]
         this.code = args[0]
+        this.path=args[3]
+        this.total = args[4]
 
     }
 
 
     getListResponse(){
         return {
-            body: {data:this.data, totalCount: this.data.length},
+            body: {data:this.data, totalCount: this.total},
             code: this.code,
             description: this.description,
             message: _getSuitMessage(this.code),
@@ -40,7 +40,7 @@ class Response {
             body: this.data,
             code: this.code,
             description: this.description,
-            message: _getSuitMessage(this.code),
+            message: _getSuitMessage(this.code, this.description,this.path),
             timeResponse: new Date().getTime()
         }
     }
@@ -48,4 +48,4 @@ class Response {
 
 }
 
-module.exports = Response
+module.exports = ResponseDataModel

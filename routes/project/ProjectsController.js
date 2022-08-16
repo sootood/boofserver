@@ -1,9 +1,20 @@
-const projects = require('../db/project.json')
-const Project = require('../dataModel/Project')
-const Response = require('../dataModel/Response')
+const projects = require('../../db/project.json')
+const Project = require('./ProjectDataModel')
+const Response = require('../../dataModel/ResponseDataModel')
+const {getUser} = require("../../globalFunction/Functions");
 
 const getProjects = (req, res) => {
-    const response = new Response(200, "", projects)
+    let response = new Response(200, "", projects)
+    const {isMin} = req.query
+    const {token} = req.headers
+
+    if (isMin && token){
+        const userId = getUser(token).id
+        if(userId!==undefined) {
+            const list = projects.filter(value => value.ownerId === userId)
+            response = new Response(200, "", list)
+        }
+    }
     res.status(200).send(response.getListResponse())
 
 }

@@ -1,6 +1,6 @@
 const {v4: uuidv4}= require('uuid')
-const {getUser} = require('../globalFunction/Functions')
-class Comment {
+const {getUser} = require('../../../globalFunction/Functions')
+class CommentDataModel {
 
     constructor(text, topicId, token) {
 
@@ -34,4 +34,4 @@ class Comment {
 
 
 }
-module.exports= Comment
+module.exports= CommentDataModel

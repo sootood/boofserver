@@ -1,18 +1,18 @@
 const {v4: uuidv4}= require('uuid')
-const {getUser} = require('../globalFunction/Functions')
-class Vote {
+const {getUser} = require('../../../globalFunction/Functions')
+class SubscribeDataModel {
 
     constructor( topicId, token) {
 
         this.topicId= topicId
-        this.voters= []
+        this.subscribers= []
         this.token = token
 
     }
-    getVote(){
+    getSubscribe(){
         return {
             topicId: this.topicId ,
-            voters:[this.token]
+            subscribers:[this.token]
         }
     }
 
@@ -20,4 +20,4 @@ class Vote {
 
 
 }
-module.exports= Vote
+module.exports= SubscribeDataModel

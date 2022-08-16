@@ -1,5 +1,5 @@
 const {v4: uuidv4} = require('uuid');
-let users = require('../db/users.json')
+let users = require('../../db/users.json')
 
 function _getUserId(token) {
     const loggedInUsers = users.filter(value => 'token' in value)
@@ -8,7 +8,7 @@ function _getUserId(token) {
         users[index].id : null
 }
 
-class Project {
+class ProjectDataModel {
 
     constructor(title, description, token) {
         this.guid = uuidv4()
@@ -34,4 +34,4 @@ class Project {
 
 }
 
-module.exports = Project
+module.exports = ProjectDataModel

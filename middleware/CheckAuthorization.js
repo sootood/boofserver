@@ -5,7 +5,6 @@ const Response = require('../../dataModel/ResponseDataModel')
 
 
 const url = require('url');
-const { requiresAuth } = require('express-openid-connect');
 
 
 

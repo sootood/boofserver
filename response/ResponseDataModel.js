@@ -1,5 +1,6 @@
 const Strings = require('../assets/Strings')
-function _getSuitMessage(type,text,path) {
+
+function _getSuitMessage(type, text, path) {
     switch (type) {
         case 200 :
             return Strings.Success;
@@ -19,15 +20,19 @@ class ResponseDataModel {
         this.data = args[2]
         this.description = args[1]
         this.code = args[0]
-        this.path=args[3]
+        this.path = args[3]
         this.total = args[4]
+
+        if (ResponseDataModel.instance)
+            return  ResponseDataModel.instance
+
 
     }
 
 
-    getListResponse(){
+    getListResponse() {
         return {
-            body: {data:this.data, totalCount: this.total},
+            body: {data: this.data, totalCount: this.total},
             code: this.code,
             description: this.description,
             message: _getSuitMessage(this.code),
@@ -40,10 +45,11 @@ class ResponseDataModel {
             body: this.data,
             code: this.code,
             description: this.description,
-            message: _getSuitMessage(this.code, this.description,this.path),
+            message: _getSuitMessage(this.code, this.description, this.path),
             timeResponse: new Date().getTime()
         }
     }
+
 
 
 }

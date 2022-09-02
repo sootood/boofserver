@@ -1,9 +1,11 @@
 const projects = require('../../db/project.json')
 const Project = require('./ProjectDataModel')
-const Response = require('../../dataModel/ResponseDataModel')
-const {getUser} = require("../../globalFunction/Functions");
+const Response = require('../../response/ResponseDataModel')
+const {getUser} = require("../../helper/Functions");
+const Strings= require('../../assets/Strings')
 
 const getProjects = (req, res) => {
+
     let response = new Response(200, "", projects)
     const {isMin} = req.query
     const {token} = req.headers
@@ -26,14 +28,13 @@ const createProject = async (req, res) => {
             title,
         } = req.body
         if (title) {
-            const response = new Response(201, "created project Successfully", new Project(title, description, req.headers.token).getProject())
+            const response = new Response(201, Strings.newProject, new Project(title, description, req.headers.token).getProject())
             res.status(201).send(response.getResponse())
         }else
-            res.status(404).send(new Response(400,"title is required").getResponse())
+            res.status(404).send(new Response(400,Strings.titleRequire).getResponse())
 
     } catch (e) {
         res.status(500).send("Server  Error")
-        console.log(e)
         throw(e)
     }
 

@@ -16,17 +16,61 @@ function _getSuitMessage(type, text, path) {
 
 class ResponseDataModel {
 
+
+    static createResponeData(code,description,data,path,total){
+
+        const response = new ResponseDataModel(code)
+            .setData(data)
+            .setPath(path)
+            .setTotal(total)
+            .setDescription(description)
+        return response
+    }
+
+    static createErrorResponeData(code,description,data){
+
+        const response = new ResponseDataModel(code)
+            .setData(data)
+            .setDescription(description)
+        return response.getResponse()
+    }
+
+
+    // constructor(code) {
+    //     this.data =null
+    //     this.description =null
+    //     this.code =code
+    //     this.path = null
+    //     this.total = null
+    //
+    //     if (ResponseDataModel.instance)
+    //         return  ResponseDataModel.instance
+    //
+    //
+    // }
     constructor(...args) {
         this.data = args[2]
         this.description = args[1]
         this.code = args[0]
-        this.path = args[3]
+        this.path=args[3]
         this.total = args[4]
 
-        if (ResponseDataModel.instance)
-            return  ResponseDataModel.instance
+            if (ResponseDataModel.instance)
+                return  ResponseDataModel.instance
+    }
 
+    setData(data){
+        this.data = data
+    }
 
+    setPath(path){
+        this.path = path
+    }
+    setTotal(total){
+        this.total = data
+    }
+    setDescription(desc){
+        this.description = desc
     }
 
 

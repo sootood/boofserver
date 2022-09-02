@@ -1,5 +1,5 @@
 const {subscribeTopic} = require("../../../strategy/TopicsStrategy");
-const Response = require('../../../dataModel/ResponseDataModel')
+const Response = require('../../../response/ResponseDataModel')
 const TopicStrategyManager = require('../../../strategy/TopicsStrategyManager')
 
 const TSM = new TopicStrategyManager()

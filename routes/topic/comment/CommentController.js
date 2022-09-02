@@ -1,8 +1,8 @@
-const Response = require('../../../dataModel/ResponseDataModel')
+const Response = require('../../../response/ResponseDataModel')
 const CommentController = require('./CommentDataModel')
 const Strings = require('../../../assets/Strings')
 const comments = require('../../../db/comments.json')
-const {writeItemOnFile} = require('../../../globalFunction/db')
+const {writeItemOnFile} = require('../../../helper/Functions')
 const  path = require('path')
 
 

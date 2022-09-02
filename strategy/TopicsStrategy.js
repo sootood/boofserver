@@ -2,12 +2,11 @@
 let votes = require('../db/votes.json')
 let subscribes = require('../db/subscribes.json')
 let topics = require('../db/topics.json')
-const {getUser,getUserById} = require('../globalFunction/Functions')
-const {writeItemOnFile, updateFile} = require('../globalFunction/db')
+const {getUser,getUserById,writeItemOnFile, updateFile} = require('../helper/Functions')
 const path = require('path')
 const Vote = require('../routes/topic/vote/VoteDataModel')
 const Subscribe = require('../routes/topic/subscribe/SubscribeDataModel')
-const Response = require('../dataModel/ResponseDataModel')
+const Response = require('../response/ResponseDataModel')
 const status = require('../db/status.json')
 
 const _ = require('lodash');
@@ -128,7 +127,7 @@ class subscribeTopic {
 }
 
 
-//chain
+
 class GetFilteredTopics {
 
     constructor(queries, index, page) {
@@ -186,9 +185,6 @@ class GetFilteredTopics {
 
 //decrorator
 class GetTopicsWithUser extends GetFilteredTopics {
-
-
-
 
     execute() {
         super.execute()

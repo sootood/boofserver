@@ -3,9 +3,8 @@ const subscribe = require('../../db/subscribes.json')
 const topics = require('../../db/topics.json')
 const projects = require('../../db/project.json')
 const activites = require('../../db/activities.json')
-const Response = require('../../dataModel/ResponseDataModel')
-const {updateFile} = require("../../globalFunction/db");
-const {getUser} = require('../../globalFunction/Functions')
+const Response = require('../../response/ResponseDataModel')
+const {updateFile,getUser} = require("../../helper/Functions");
 const path = require('path')
 
 

@@ -1,16 +1,25 @@
 const winston = require('winston');
+require('winston-daily-rotate-file');
 
+const fileRotateTransport = new winston.transports.DailyRotateFile({
+    filename: 'combined-%DATE%.log',
+    datePattern: 'YYYY-MM-DD-HH-mm',
+    frequency:'3d',
+    maxSize:'20m',
+    zippedArchive:true,
+  });
+  
 const logger = winston.createLogger({
+
     format: winston.format.simple(),
 
     transports: [
-        //
-        // - Write all logs with importance level of `error` or less to `error.log`
-        // - Write all logs with importance level of `info` or less to `combined.log`
+      
         //
         new winston.transports.File({ filename: 'error.log', level: 'error' }),
         new winston.transports.File({ filename: 'combined.log' }),
-        new winston.transports.Console()
+        new winston.transports.Console(),
+        fileRotateTransport
     ],
 });
 // if (process.env.NODE_ENV !== 'production') {

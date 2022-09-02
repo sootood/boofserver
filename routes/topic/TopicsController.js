@@ -1,15 +1,14 @@
-const {readFileG, writeItemOnFile, updateFile} = require('../../globalFunction/db')
-const Response = require('../../dataModel/ResponseDataModel')
+const {readFileG, writeItemOnFile, updateFile} = require('../../helper/Functions')
+const Response = require('../../response/ResponseDataModel')
 const Topic = require('./TopicDataModel')
 const topicsController = require('../../db/topics.json')
 const subscribes = require('../../db/subscribes.json')
 const votes = require('../../db/votes.json')
 const TopicStrategyManager = require('../../strategy/TopicsStrategyManager')
-const {UpdateTopicStatus, GetFilteredTopics, GetTopicsWithUser,RedesignTopicObject} = require('../../strategy/TopicsStrategy')
-const {getUser} = require('../../globalFunction/Functions')
+const {UpdateTopicStatus, GetFilteredTopics, GetTopicsWithUser, RedesignTopicObject} = require('../../strategy/TopicsStrategy')
+const {getUser} = require('../../helper/Functions')
 const path = require('path')
 const RefactoTopics = require("./RefactoTopics");
-
 const TSM = new TopicStrategyManager()
 
 //chain of responsibiity
@@ -49,15 +48,16 @@ const TSM = new TopicStrategyManager()
 //         res.status(500).send(new Response(500, "server error" + e).getResponse())
 //     }
 // }
+
+
 const getTopics = async (req, res) => {
-    console.log(JSON.stringify(req.oidc.user));
 
     try {
         const {token} = req.headers
-
         const topicFactory = new RefactoTopics(token).getTypeOfFactory(req.query)
-       const  response = new Response(200, "", topicFactory.execute(),0,topicFactory.getTotalLength())
+        const response = new Response(200, "", topicFactory.execute(), 0, topicFactory.getTotalLength())
         res.status(200).send(response.getListResponse())
+
     } catch (e) {
         res.status(500).send(new Response(500, "server error" + e).getResponse())
     }
@@ -109,12 +109,11 @@ const createTopic = async (req, res) => {
 const updateTopic = async (req, res) => {
     try {
         const {topicID} = req.params
-        console.log(topicID)
         const index = topicsController.findIndex(value => value.guid === topicID)
         if (index !== -1) {
             const selectedTopics = topicsController[index]
             const updateTopic = {...selectedTopics, ...req.body}
-            topicsController[index] = _.omit( updateTopic,['isSubscribe','isUserVoted'])
+            topicsController[index] = _.omit(updateTopic, ['isSubscribe', 'isUserVoted'])
             await updateFile(`${path.resolve()}/db/topics.json`, topicsController)
             res.status(200).send(new Response(200, "Updated successfully", updateTopic,).getResponse())
 
@@ -165,7 +164,7 @@ const changeTopiStatus = async (req, res) => {
             res.status(400).send(new Response(400, "bad request ").getResponse())
         }
     } catch (e) {
-        res.status(500).send(new Response(500, "server Error " ).getResponse())
+        res.status(500).send(new Response(500, "server Error ").getResponse())
     }
 }
 

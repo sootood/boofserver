@@ -9,7 +9,7 @@ const APIs =[
     },
     {
         name:`${APIName.TOPICS}${APIName.DETAILTOPICS}`,
-        pattern:'^\\/api\\/topics\\/.*[^\\/0-9a-zA-Z](\\/$)|$',
+        pattern:'^\\/api\\/topics\\/.*[^\\/0-9a-zA-Z]((\\/$)|$)$',
         authenticationType :[]
     },
     {
@@ -43,10 +43,11 @@ const APIs =[
         name:`${APIName.AUTHMAIN}${APIName.SIGNUP}`,
         pattern:'^\\/api/auth/signup((\\/$)|$)',
         authenticationType :[]
+    },{
+        name:`${APIName.AUTHMAIN}${APIName.REFRESHTOKEN}`,
+        pattern:'^\\/api/auth/refreshToken((\\/$)|$)',
+        authenticationType :[]
     },
-
-    //project
-
     {
         name:`${APIName.PROJECT}${APIName.ALLPROJECT}`,
         pattern:'^\\/api/project/allProjects((\\/$)|$)',

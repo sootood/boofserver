@@ -1,7 +1,7 @@
 
 const {UpdateVote} = require("../../../strategy/TopicsStrategy");
 const TopicStrategyManager = require('../../../strategy/TopicsStrategyManager')
-const Response = require('../../../dataModel/ResponseDataModel')
+const Response = require('../../../response/ResponseDataModel')
 const {getTopicsById} = require("../TopicsController");
 
 const TSM = new TopicStrategyManager()

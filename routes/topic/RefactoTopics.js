@@ -1,6 +1,8 @@
 const {GetTopicsWithUser, GetSubscribedTopics, GetFilteredTopics} = require("../../strategy/TopicsStrategy");
 const subscribes = require('../../db/subscribes.json')
-const {getUser} = require("../../globalFunction/Functions");
+const {getUser} = require("../../helper/Functions");
+
+//factory
 
  class RefactoTopics {
 

@@ -19,6 +19,7 @@ const APIName ={
     AUTHMAIN:'/api/auth',
     LOGIN:'/login',
     SIGNUP:'/signup',
+    REFRESHTOKEN:'/refreshToken',
 
     //project
     PROJECT:'/api/project',

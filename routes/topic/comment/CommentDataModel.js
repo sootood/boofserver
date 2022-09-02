@@ -1,5 +1,5 @@
 const {v4: uuidv4}= require('uuid')
-const {getUser} = require('../../../globalFunction/Functions')
+const {getUser} = require('../../../helper/Functions')
 class CommentDataModel {
 
     constructor(text, topicId, token) {

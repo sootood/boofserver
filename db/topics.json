@@ -2,15 +2,15 @@
   {
     "guid": "0bae99a7-f1bc-45d6-a906-c6c4af572054",
     "isPublic": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "images (3).jpg",
     "publishingStatus": "<SyntaxError: missing ) after argument list>",
     "topicStatus": "published",
     "project": "CEDWARD",
-    "description": "In fugiat cillum cupidatat dolore excepteur eiusmod quis occaecat adipisicing nostrud. Eiusmod consequat veniam dolore aute mollit ullamco sint laborum eu non tempor. Officia consequat labore id cillum aliqua sit sit elit cupidatat do commodo id cillum anim. Consequat proident aute eu ad adipisicing sunt fugiat adipisicing labore ad labore anim. Nulla ut sint deserunt cupidatat Lorem enim mollit voluptate ea aliquip aute.\r\n",
+    "description": "مجره نمایش های هشدار آپدیت جدید توسط شخص ما داخل برنامه پیاده سازی شده و در صورتی که آپدیت جدید بدیم اون گزینه رو فعال می کنیم تا از کافه بازار آپدیت کنن برنامه رو",
     "createdTime": "2019-04-13T02:00:15 -05:-30",
-    "title": "officia",
+    "title": "هشدار آپدیت ",
     "type": "bug",
-    "vote": 5,
+    "vote": 13,
     "ownerId": 0,
     "owner": "sootood",
     "isSubscribe": false,
@@ -20,15 +20,15 @@
   {
     "guid": "4d46a919-0bc7-4f52-8efa-9fbc1cb9e1c5",
     "isPublic": false,
-    "picture": "http://placehold.it/32x32",
+    "picture": "images.jpg",
     "publishingStatus": "<SyntaxError: missing ) after argument list>",
     "topicStatus": "published",
     "project": "COGENTRY",
-    "description": "Voluptate cupidatat duis nulla commodo Lorem duis pariatur voluptate pariatur consequat. Dolore Lorem magna incididunt est ipsum labore elit dolor dolor dolore fugiat reprehenderit ad fugiat. Velit mollit laborum tempor cillum proident irure ea veniam irure. Ipsum quis proident nisi sunt anim aliquip aliqua pariatur. Consectetur irure ad officia ea eiusmod elit aute. Nostrud non voluptate qui elit cupidatat magna.\r\n",
+    "description": "با استفاده از این قابلیت شما قادر خواهید بود با انتخاب بازه زمانی دلخواه در نمودارهای بخش آمار برنامه، آمار مرتبط با آن بازه زمانی را مشاهده نمایید.",
     "createdTime": "2014-12-07T09:48:24 -04:-30",
-    "title": "ullamco",
+    "title": "امکان انتخاب بازه زمانی دلخواه در نمودارها",
     "type": "offer",
-    "vote": 4,
+    "vote": 6,
     "owner": "sootood",
     "ownerId": 0,
     "typeID": 1,
@@ -40,14 +40,14 @@
   {
     "guid": "417201d1-f8b6-4c24-af80-9e5ced7952c6",
     "isPublic": true,
-    "picture": "http://placehold.it/32x32",
+    "picture": "images (1).jpg",
     "publishingStatus": "<SyntaxError: missing ) after argument list>",
     "topicStatus": "implementing",
     "owner": "sootoodi",
     "project": "CHILLIUM",
-    "description": "Voluptate eiusmod ipsum excepteur veniam nostrud nostrud magna laboris id nulla officia id. Duis qui pariatur non sit labore laborum culpa amet in ullamco aliqua. Duis ea labore consequat nisi. Occaecat dolor officia incididunt fugiat ipsum nulla ullamco ipsum.\r\n",
+    "description": "امکان تعریف تست های چندحالته مشابه با Storelisting experiments در گوگل پلی، برای مشخصات برنامه از جمله (اسم، آیکن، تصاویر، توضیحات کوتاه و ...) همچنین قابلیت اندازه گیری نتیجه هر گروه با توجه به نرخ تبدیل (نمایش در استور به نصب)",
     "createdTime": "2016-11-20T05:24:00 -04:-30",
-    "title": "do",
+    "title": "قابلیت A/B تست مشخصات برنامه    ",
     "type": "offer",
     "projectId": "49887154-6086-4d1e-bef1-09b4ef741bd0",
     "ownerId": 1,
@@ -72,13 +72,13 @@
   {
     "guid": "d79b2bcc-9133-4647-9a46-dbc4304e5161",
     "isPublic": true,
-    "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNV--oTzferIkym-oLG_jwkx7TguY5C6J6vA&usqp=CAU",
+    "picture": "images (3).jpg",
     "publishingStatus": "<SyntaxError: missing ) after argument list>",
     "project": "GEEKOLA",
     "description": "Dolor non non eu minim id cillum tempor laborum. Lorem minim et reprehenderit magna voluptate ipsum minim minim adipisicing. Exercitation minim dolore nostrud quis nulla velit eiusmod ex pariatur officia. Do irure irure amet mollit ex anim nostrud deserunt sint proident. Reprehenderit esse eu esse non. Commodo amet voluptate commodo exercitation eu amet sunt id Lorem esse id.\r\n",
     "createdTime": "2015-03-22T02:06:16 -05:-30",
     "title": "mage darim",
-    "vote": 9,
+    "vote": 12,
     "type": "offer",
     "topicStatus": "in approving",
     "projectId": "6475a3bd-62a3-4d18-aed8-e8cf66e0bd26",
@@ -161,6 +161,7 @@
   {
     "guid": "37b1c348-950f-4353-81ac-193e8b3fdc51",
     "title": "بلیبلبی",
+    "picture": "images.jpg",
     "createdTime": 1658666958050,
     "publishingStatus": "approving",
     "topicStatus": -1,
@@ -196,7 +197,9 @@
     "type": "offer",
     "timeline": [1658667081995],
     "owner": "sootood",
-    "ownerId": 1
+    "ownerId": 1,
+    "isSubscribe": false,
+    "isUserVoted": false
   },
   {
     "guid": "aa49d23a-8bc4-402a-b4d1-061f9487c9e8",
@@ -208,7 +211,9 @@
     "type": "offer",
     "timeline": [1658810146134],
     "owner": "sootood",
-    "ownerId": 1
+    "ownerId": 1,
+    "isSubscribe": false,
+    "isUserVoted": false
   },
   {
     "guid": "e32aedb6-3efc-4be3-91e1-134695f97f41",
@@ -221,7 +226,9 @@
     "timeline": [1658811189029],
     "isPublic": "false",
     "owner": "sootood",
-    "ownerId": 1
+    "ownerId": 1,
+    "isSubscribe": false,
+    "isUserVoted": false
   },
   {
     "guid": "999d6885-55bd-47fa-87f7-2adfc69f6181",
@@ -234,7 +241,9 @@
     "timeline": [1658825446744],
     "isPublic": "false",
     "owner": "sootood",
-    "ownerId": 2
+    "ownerId": 2,
+    "isSubscribe": false,
+    "isUserVoted": false
   },
   {
     "guid": "8bab4122-3536-461f-985b-662de6c599c7",
@@ -247,7 +256,9 @@
     "timeline": [1658825646391],
     "isPublic": "false",
     "owner": "sootood",
-    "ownerId": 1
+    "ownerId": 1,
+    "isSubscribe": false,
+    "isUserVoted": false
   },
   {
     "guid": "35334ef5-bff4-4f48-9e7f-313bda14cca9",
@@ -261,7 +272,9 @@
     "isPublic": "false",
     "typeID": "bug",
     "projectId": "06cc400f-0da6-4a71-aa57-99a67b3fb133",
-    "ownerId": 2
+    "ownerId": 2,
+    "isSubscribe": false,
+    "isUserVoted": false
   },
   {
     "guid": "d4c43ea8-06fe-4880-9263-8915e12a643d",
@@ -274,7 +287,9 @@
     "timeline": [1658825992529],
     "isPublic": "false",
     "owner": "sootood",
-    "ownerId": 1
+    "ownerId": 1,
+    "isSubscribe": false,
+    "isUserVoted": false
   },
   {
     "guid": "ae971b86-35a5-4ed7-b245-f10525a9a10b",
@@ -287,7 +302,9 @@
     "timeline": [1658826114453],
     "isPublic": "false",
     "owner": "sootood",
-    "ownerId": 1
+    "ownerId": 1,
+    "isSubscribe": false,
+    "isUserVoted": false
   },
   {
     "guid": "61f31359-563a-4ab5-b00e-401528a1b6ad",
@@ -326,6 +343,8 @@
     "vote": 0,
     "type": "offer",
     "timeline": [1661603499568],
-    "isPublic": "false"
+    "isPublic": "false",
+    "isSubscribe": false,
+    "isUserVoted": false
   }
 ]

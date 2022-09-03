@@ -8,6 +8,7 @@ const Vote = require('../routes/topic/vote/VoteDataModel')
 const Subscribe = require('../routes/topic/subscribe/SubscribeDataModel')
 const Response = require('../response/ResponseDataModel')
 const status = require('../db/status.json')
+const {readFile} = require('fs/promises')
 
 const _ = require('lodash');
 
@@ -163,11 +164,10 @@ class GetFilteredTopics {
                     else
                         return value[filterItem.key].toString().includes(filterItem.value)
                 }else{
-                    console.log('there isnt ')
                 }
             })
         }
-        console.log(rearrangedTopics.length)
+       
 
         if (this.sortedBy)
             rearrangedTopics = _.sortBy(rearrangedTopics, this.sortedBy)
@@ -175,6 +175,15 @@ class GetFilteredTopics {
 
         this.mainArray = [...rearrangedTopics]
         this.array = [...rearrangedTopics].slice((this.page - 1) * (this.index), (this.page * this.index))
+       
+        // const finalArray = []
+        // for (const item of this.array) {
+
+        //     const newItem = new GetTopicConvertedImage(item).getTopicBase64Image()
+        //     finalArray.push(newItem.body)
+        // }
+
+       
         return [...rearrangedTopics].slice((this.page - 1) * (this.index), (this.page * this.index))
 
     }
@@ -265,6 +274,32 @@ class GetTopicWithToken {
 
 }
 
+class GetTopicConvertedImage {
+
+    constructor(item) {
+        this._item = item
+        
+    }
+
+    async getTopicBase64Image() {
+       const pic = this._item.picture
+       if (pic) {
+        
+       readFile(`${path.resolve()}/assets/images/${pic}`,'base64').then(
+        res=>{
+            this._item.picture = res
+        }
+       );
+       }
+       return new Response(200, "",  this._item).getResponse()
+    }
+
+
+}
+
+
+
+
 class RedesignTopicObject {
 
     constructor(array) {
@@ -300,5 +335,6 @@ module.exports = {
     GetFilteredTopics,
     GetTopicsWithUser,
     GetTopicWithToken,RedesignTopicObject,
-    GetSubscribedTopics
+    GetSubscribedTopics,
+    GetTopicConvertedImage
 }

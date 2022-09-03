@@ -41,7 +41,7 @@ const isLoggedInUser = (req, res, next) => {
                 }
               } catch (e) {
                 if (e.toString().includes("expired"))
-                  res.status(403).send(new Response(401,"please refresh your token" ));
+                  res.status(403).send(new Response(403,"please refresh your token" ));
                 else res.status(401).send(new Response(401, Strings.AuthorizaionError));
               }
 

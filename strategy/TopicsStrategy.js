@@ -8,7 +8,7 @@ const Vote = require('../routes/topic/vote/VoteDataModel')
 const Subscribe = require('../routes/topic/subscribe/SubscribeDataModel')
 const Response = require('../response/ResponseDataModel')
 const status = require('../db/status.json')
-const {readFile} = require('fs/promises')
+const fs = require('fs')
 
 const _ = require('lodash');
 
@@ -153,11 +153,11 @@ class GetFilteredTopics {
     }
 
     execute() {
-        let rearrangedTopics =  [...topics]
+        let rearrangedTopics = new Array(topics.length) 
+        rearrangedTopics = [...topics]
 
         for (let filterItem of this.filteredArray) {
             rearrangedTopics = [...rearrangedTopics].filter(function (value,index) {
-              console.log(index,filterItem.key in value,)
                 if (filterItem.key in value) {
                     if (typeof value[filterItem.key] === 'number')
                         return value[filterItem.key] === Number(filterItem.value)
@@ -176,15 +176,16 @@ class GetFilteredTopics {
         this.mainArray = [...rearrangedTopics]
         this.array = [...rearrangedTopics].slice((this.page - 1) * (this.index), (this.page * this.index))
        
-        // const finalArray = []
-        // for (const item of this.array) {
+        const finalArray = []
+        for (const item of this.array) {
 
-        //     const newItem = new GetTopicConvertedImage(item).getTopicBase64Image()
-        //     finalArray.push(newItem.body)
-        // }
+            const newItem = new GetTopicConvertedImage(item).getTopicBase64Image()
+           
+            finalArray.push(newItem.body)
+        }
 
        
-        return [...rearrangedTopics].slice((this.page - 1) * (this.index), (this.page * this.index))
+        return [...finalArray].slice((this.page - 1) * (this.index), (this.page * this.index))
 
     }
 
@@ -281,15 +282,16 @@ class GetTopicConvertedImage {
         
     }
 
-    async getTopicBase64Image() {
+     getTopicBase64Image() {
        const pic = this._item.picture
        if (pic) {
-        
-       readFile(`${path.resolve()}/assets/images/${pic}`,'base64').then(
-        res=>{
-            this._item.picture = res
-        }
-       );
+        const bitmap = fs.readFileSync(`${path.resolve()}/assets/images/${pic}`);
+        const base64File = new Buffer.from(bitmap).toString('base64');
+       if (base64File) {
+        this._item.picture = base64File
+
+       }
+       
        }
        return new Response(200, "",  this._item).getResponse()
     }

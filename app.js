@@ -1,7 +1,5 @@
 
-const https = require("https");
-const fs = require("fs");
-const cors = require('cors');
+
 const express = require('express');
 
 const dotEnv = require('dotenv')
@@ -9,6 +7,7 @@ const topics = require('./routes/topic/TopicsRoutes')
 const projects = require('./routes/project/ProjectRoutes')
 const auth = require('./routes/auth/AutorizationRoutes')
 const user = require('./routes/user/UserRoutes')
+const News = require('./routes/news/NewsRoutes')
 const {isLoggedInUser} = require('./middleware/CheckAuthorization')
 const {errorResponse} = require('./helper/Interceptors')
 const {APIName} = require('./assets/Constant')
@@ -36,16 +35,21 @@ app.use(function (req, res, next) {
             case 403:
                 logger.warn(`API : ${req.originalUrl} ${new Date().getTime()} ${res.statusMessage}`)
                 break;
+                case 500:
+                logger.error(`API : ${req.originalUrl} ${new Date().getTime()} ${res.statusMessage}`)
+                break
+
         }
     });
     next()
 });
-app.use(errorResponse);
+// app.use(errorResponse);
 
 app.use(APIName.AUTHMAIN, auth)
 app.use(APIName.TOPICS, topics)
 app.use(APIName.PROJECT, projects)
 app.use(APIName.USER, user)
+app.use(APIName.NEWS, News)
 
 // if enable ssl comment this part
 app.listen(3001, () => {

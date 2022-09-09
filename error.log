@@ -72,3 +72,18 @@ error: API : /api/ 1661174093882 Not Found
 error: API : /api/ 1661174093887 Not Found
 error: API : /api/ 1661174116377 Not Found
 error: API : /api/auth/refreshToken 1661969488664 Not Found
+error: API : /api/topics/ 1662468739553 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468756523 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468777230 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468818024 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468821631 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468865611 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468941709 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468994478 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662469128816 Internal Server Error
+error: API : /api/auth/login/ 1662577265570 Not Found
+error: API : /api/auth/login/ 1662577488994 Not Found
+error: API : /api/news/publishedTopic 1662588175311 Internal Server Error
+error: API : /api/news/publishedTopic 1662751553207 Internal Server Error
+error: API : /api/news/publishedTopic 1662757906332 Internal Server Error
+error: API : /api/news/publishedTopic 1662758026679 Internal Server Error

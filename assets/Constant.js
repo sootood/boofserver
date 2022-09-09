@@ -32,6 +32,8 @@ const APIName ={
     ACTIVITIES:'/activities',
     SUBSCRIBED:'/subscribe',
 
+    NEWS:'/api/news',
+    PUBLISHEDTOPICS:'/publishedTopic'    
 
 
 }

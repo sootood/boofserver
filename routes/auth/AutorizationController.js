@@ -3,8 +3,8 @@ const LoginFunction = require("./AuthFunction");
 const login = async (req, res, next) => {
   try {
     const loginFunction = new LoginFunction();
-    loginFunction.setMobile(req.body.mobile)
-    loginFunction.setPassword(req.body.password);
+        loginFunction.setMobile(req.body.mobile)
+        loginFunction.setPassword(req.body.password);
     const executedResult = await loginFunction.executeFunction();
     return res.status(executedResult.code).send(executedResult.response);
   } catch (e) {
@@ -15,8 +15,8 @@ const login = async (req, res, next) => {
 const signup = (req, res, next) => {
   try {
     const signupFunction = new LoginFunction();
-    signupFunction.setMobile(req.body.mobile)
-    signupFunction.setPassword(req.body.password);
+        signupFunction.setMobile(req.body.mobile)
+        signupFunction.setPassword(req.body.password);
     const executedResult = signupFunction.executeSignupFunction();
     return res.status(executedResult.code).send(executedResult.response);
   } catch (e) {

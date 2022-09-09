@@ -54,6 +54,7 @@ const getTopics = async (req, res) => {
 
     try {
         const {token} = req.headers
+        console.log("fff",token)
         const topicFactory = new RefactoTopics(token).getTypeOfFactory(req.query)
         const response = new Response(200, "", topicFactory.execute(), 0, topicFactory.getTotalLength())
         res.status(200).send(response.getListResponse())

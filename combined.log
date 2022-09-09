@@ -1168,3 +1168,137 @@ info: API : /api/project/allProjects 1662235576570 OK
 info: API : /api/project/allProjects?isMin=true 1662235969452 OK
 info: API : /api/topics/?index=10&page=1&topicStatus=-1 1662235969465 OK
 info: API : /api/auth/login/ 1662236046937 OK
+info: API : /api/topics/ 1662236048453 OK
+info: API : /api/project/allProjects 1662236048461 OK
+info: API : /api/auth/login 1662468730012 OK
+info: API : /api/auth/login/ 1662468738026 OK
+info: API : /api/project/allProjects 1662468739542 OK
+error: API : /api/topics/ 1662468739553 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468756523 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468777230 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468818024 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468821631 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468865611 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468941709 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662468994478 Internal Server Error
+error: API : /api/topics/?index=3&page=1&topicStatus=-1 1662469128816 Internal Server Error
+info: API : /api/topics/?index=3&page=1&topicStatus=-1 1662469192254 OK
+info: API : /api/topics/ 1662469234710 OK
+info: API : /api/project/allProjects 1662469234838 OK
+info: API : /api/auth/login/ 1662469611482 OK
+info: API : /api/project/allProjects 1662469613273 OK
+info: API : /api/topics/ 1662469613356 OK
+info: API : /api/topics/ 1662470294023 OK
+info: API : /api/project/allProjects 1662480558147 OK
+info: API : /api/topics/ 1662480558277 OK
+info: API : /api/topics/ 1662480599382 OK
+info: API : /api/project/allProjects 1662480599386 OK
+info: API : /api/topics/ 1662480600386 OK
+info: API : /api/project/allProjects 1662480600389 OK
+info: API : /api/project/allProjects 1662480618773 OK
+info: API : /api/topics/ 1662480618846 OK
+info: API : /api/topics/?index=10&page=1 1662481529232 OK
+info: API : /api/project/allProjects?isMin=true 1662481529238 OK
+info: API : /api/topics/ 1662481570002 OK
+info: API : /api/project/allProjects 1662481570004 OK
+info: API : /api/project/allProjects?isMin=true 1662481578332 OK
+info: API : /api/topics/?index=10&page=1 1662481578471 OK
+info: API : /api/project/allProjects?isMin=true 1662481708781 OK
+info: API : /api/topics/?index=10&page=1 1662481708890 OK
+info: API : /api/project/allProjects 1662481828945 OK
+info: API : /api/topics/ 1662481829018 OK
+info: API : /api/topics/?index=10&page=1 1662481837698 OK
+info: API : /api/project/allProjects?isMin=true 1662481837700 OK
+info: API : /api/topics/?index=10&page=1&type=offer 1662481881670 OK
+info: API : /api/topics//0bae99a7-f1bc-45d6-a906-c6c4af572054/comment/ 1662482245542 OK
+info: API : /api/topics/ 1662482277779 OK
+info: API : /api/project/allProjects 1662482277785 OK
+info: API : /api/topics//0bae99a7-f1bc-45d6-a906-c6c4af572054/comment/ 1662482285317 OK
+error: API : /api/auth/login/ 1662577265570 Not Found
+error: API : /api/auth/login/ 1662577488994 Not Found
+info: API : /api/auth/login/ 1662579254353 OK
+info: API : /api/topics/ 1662579256814 OK
+info: API : /api/project/allProjects 1662579256828 OK
+info: API : /api/topics/ 1662579408292 OK
+info: API : /api/project/allProjects 1662579408304 OK
+info: API : /api/topics/ 1662579451525 OK
+info: API : /api/project/allProjects 1662579451531 OK
+info: API : /api/topics/ 1662579470319 OK
+info: API : /api/project/allProjects 1662579470323 OK
+info: API : /api/topics/ 1662579506243 OK
+info: API : /api/project/allProjects 1662579506253 OK
+info: API : /api/topics/ 1662579542151 OK
+info: API : /api/project/allProjects 1662579542175 OK
+info: API : /api/topics/ 1662579564563 OK
+info: API : /api/project/allProjects 1662579564575 OK
+info: API : /api/topics/ 1662579595566 OK
+info: API : /api/project/allProjects 1662579595576 OK
+info: API : /api/topics/ 1662579617333 OK
+info: API : /api/project/allProjects 1662579617343 OK
+info: API : /api/auth/login 1662586383557 OK
+info: API : /api/auth/login/ 1662587648132 OK
+info: API : /api/topics/ 1662587650356 OK
+info: API : /api/project/allProjects 1662587650375 OK
+info: API : /api/topics/?index=10&page=1 1662588045315 OK
+info: API : /api/project/allProjects?isMin=true 1662588045329 OK
+info: API : /api/topics/?index=10&page=1&projectId=0b156c61-c68e-44a8-8c26-1275b07a3ee6 1662588054975 OK
+info: API : /api/topics/?index=10&page=1&projectId=6475a3bd-62a3-4d18-aed8-e8cf66e0bd26 1662588061227 OK
+info: API : /api/topics/ 1662588166480 OK
+info: API : /api/project/allProjects 1662588166491 OK
+error: API : /api/news/publishedTopic 1662588175311 Internal Server Error
+info: API : /api/project/allProjects 1662588203279 OK
+info: API : /api/topics/ 1662588203404 OK
+info: API : /api/topics/ 1662588234221 OK
+info: API : /api/project/allProjects 1662588234228 OK
+info: API : /api/project/allProjects?isMin=true 1662588244097 OK
+info: API : /api/topics/?index=10&page=1 1662588244249 OK
+info: API : /api/topics/?index=10&page=1&type=bug 1662588253910 OK
+info: API : /api/topics/?index=10&page=1&type=bug&projectId=6475a3bd-62a3-4d18-aed8-e8cf66e0bd26 1662588259567 OK
+info: API : /api/topics/?index=10&page=1&type=bug 1662588273830 OK
+info: API : /api/topics/?index=10&page=1&type=bug&topicStatus=published 1662588291926 OK
+info: API : /api/project/allProjects?isMin=true 1662588301657 OK
+info: API : /api/topics/?index=10&page=1 1662588301740 OK
+info: API : /api/topics/?index=10&page=1&type=bug 1662588312007 OK
+info: API : /api/auth/login/ 1662749165753 OK
+info: API : /api/project/allProjects 1662749167010 OK
+info: API : /api/topics/ 1662749167135 OK
+info: API : /api/topics//0bae99a7-f1bc-45d6-a906-c6c4af572054/comment/ 1662749551013 OK
+info: API : /api/topics/ 1662750335167 OK
+info: API : /api/project/allProjects 1662750335188 OK
+info: API : /api/topics//0bae99a7-f1bc-45d6-a906-c6c4af572054/comment/ 1662750485853 OK
+info: API : /api/topics/ 1662750553419 OK
+info: API : /api/project/allProjects 1662750553422 OK
+info: API : /api/topics//0bae99a7-f1bc-45d6-a906-c6c4af572054/comment/ 1662750678629 OK
+info: API : /api/topics/?index=10&page=1 1662750686156 OK
+info: API : /api/project/allProjects?isMin=true 1662750686165 OK
+info: API : /api/topics/?index=10&page=1&projectId=6475a3bd-62a3-4d18-aed8-e8cf66e0bd26 1662750699065 OK
+info: API : /api/topics//4c62138f-368b-433d-b4f0-db4d9abaed62/comment/ 1662750756624 OK
+info: API : /api/topics//4c62138f-368b-433d-b4f0-db4d9abaed62/comment/ 1662750757221 OK
+info: API : /api/topics/?index=10&page=1 1662750764569 OK
+info: API : /api/topics/?index=10&page=1&topicStatus=published 1662750774177 OK
+error: API : /api/news/publishedTopic 1662751553207 Internal Server Error
+info: API : /api/topics/ 1662753972560 OK
+info: API : /api/project/allProjects 1662753972570 OK
+info: API : /api/auth/login/ 1662754001229 OK
+info: API : /api/topics/ 1662754001710 OK
+info: API : /api/project/allProjects 1662754001715 OK
+info: API : /api/auth/login/ 1662757666773 OK
+info: API : /api/topics/ 1662757668478 OK
+info: API : /api/project/allProjects 1662757668489 OK
+info: API : /api/project/allProjects 1662757796568 OK
+info: API : /api/topics/ 1662757796670 OK
+info: API : /api/project/allProjects?isMin=true 1662757827743 OK
+info: API : /api/topics/?index=10&page=1&topicStatus=-1 1662757827834 OK
+info: API : /api/project/allProjects 1662757836274 OK
+info: API : /api/topics/ 1662757836461 OK
+info: API : /api/auth/login/ 1662757899144 OK
+info: API : /api/topics/ 1662757900643 OK
+info: API : /api/project/allProjects 1662757900654 OK
+error: API : /api/news/publishedTopic 1662757906332 Internal Server Error
+error: API : /api/news/publishedTopic 1662758026679 Internal Server Error
+info: API : /api/news/publishedTopic 1662758119409 OK
+info: API : /api/project/allProjects 1662758141251 OK
+info: API : /api/topics/ 1662758141341 OK
+info: API : /api/topics/?index=10&page=1&isSubscribe=true 1662758154492 OK
+info: API : /api/project/allProjects?isMin=true 1662758154498 OK
+info: API : /api/news/publishedTopic 1662758159323 OK

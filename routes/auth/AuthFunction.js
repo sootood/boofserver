@@ -16,12 +16,12 @@ const _checkUserPass = async (mobile, password) => {
     loggedInUser[0] = { ...user[0], isUser: true };
 
     const token = jwt.sign(loggedInUser[0], process.env.SECRETKEY, {
-      expiresIn: "2m",
+      expiresIn: "24h",
     });
     const refreshToken = jwt.sign(
       loggedInUser[0],
       process.env.SECREFREFRESHKEY,
-      { expiresIn: "24h" }
+      { expiresIn: "1w" }
     );
 
     newUsers = users.map((value) => {

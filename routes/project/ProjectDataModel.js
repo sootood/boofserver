@@ -1,6 +1,6 @@
 const {v4: uuidv4} = require('uuid');
 let users = require('../../db/users.json')
-
+const {getUser} = require("../../helper/Functions");
 function _getUserId(token) {
     const loggedInUsers = users.filter(value => 'token' in value)
     const index = loggedInUsers.findIndex(value => value.token === token)
@@ -27,7 +27,7 @@ class ProjectDataModel {
             title: this.title,
             description: this.description,
             createdTime: new Date().getTime(),
-            owner: _getUserId(this.token)
+            owner: getUser(this.token).id
         }
     }
 

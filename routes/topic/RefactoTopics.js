@@ -3,7 +3,6 @@ const subscribes = require('../../db/subscribes.json')
 const {getUser} = require("../../helper/Functions");
 
 //factory
-
  class RefactoTopics {
 
     constructor(token) {
@@ -34,7 +33,7 @@ const {getUser} = require("../../helper/Functions");
         }
 
         if (this.token)
-            return new GetTopicsWithUser(queries,index,page)
+            return new GetTopicsWithUser(queries,index,page,this.token)
 
 
         return new GetFilteredTopics(queries,index,page)

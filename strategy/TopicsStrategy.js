@@ -1,7 +1,7 @@
 
 let votes = require('../db/votes.json')
 let subscribes = require('../db/subscribes.json')
-let topics = require('../db/topics.json')
+const topics = require('../db/topics.json')
 const {getUser,getUserById,writeItemOnFile, updateFile} = require('../helper/Functions')
 const path = require('path')
 const Vote = require('../routes/topic/vote/VoteDataModel')
@@ -11,6 +11,7 @@ const status = require('../db/status.json')
 const fs = require('fs')
 
 const _ = require('lodash');
+const {readFileG} = require("../helper/Functions");
 
 class UpdateVote {
 
@@ -75,6 +76,7 @@ class UpdateTopicProperty {
     async action() {
 
         try {
+            const topics = await readFileG(`${path.resolve()}/db/topics.json`)
             const index = topics.findIndex(value => value.guid === this.topicId)
             if (index !== -1) {
                 const selectedTopics = topics[index]
@@ -140,7 +142,6 @@ class GetFilteredTopics {
                 this.sortedBy = queries[query]
         }
 
-
         this.index = index
         this.page = page
         this.total =0
@@ -153,9 +154,8 @@ class GetFilteredTopics {
     }
 
     execute() {
-        let rearrangedTopics = new Array(topics.length) 
-        rearrangedTopics = [...topics]
-
+        const topics = JSON.parse(fs.readFileSync(`${path.resolve()}/db/topics.json`,{encoding:'utf8',}));
+        let rearrangedTopics = new Array(topics.length).fill("").map((_,index) => topics[index])
         for (let filterItem of this.filteredArray) {
             rearrangedTopics = [...rearrangedTopics].filter(function (value,index) {
                 if (filterItem.key in value) {
@@ -167,7 +167,7 @@ class GetFilteredTopics {
                 }
             })
         }
-       
+
 
         if (this.sortedBy)
             rearrangedTopics = _.sortBy(rearrangedTopics, this.sortedBy)
@@ -175,16 +175,17 @@ class GetFilteredTopics {
 
         this.mainArray = [...rearrangedTopics]
         this.array = [...rearrangedTopics].slice((this.page - 1) * (this.index), (this.page * this.index))
-       
+    console.log(topics
+    )
         const finalArray = []
         for (const item of this.array) {
 
             const newItem = new GetTopicConvertedImage(item).getTopicBase64Image()
-           
+
             finalArray.push(newItem.body)
         }
 
-       
+
         return [...finalArray].slice((this.page - 1) * (this.index), (this.page * this.index))
 
     }
@@ -196,12 +197,16 @@ class GetFilteredTopics {
 //decrorator
 class GetTopicsWithUser extends GetFilteredTopics {
 
+    constructor(queries, index, page, token) {
+        super(queries, index, page);
+        this.token= token
+    }
     execute() {
         super.execute()
         const finalArray = []
         for (const item of this.array) {
-
-            const newItem = new GetTopicWithToken(item, this._token)
+            const _ = Object.assign({},item)
+            const newItem = new GetTopicWithToken(_, this.token)
             finalArray.push(newItem.body)
         }
         return  (finalArray)
@@ -253,9 +258,7 @@ class GetTopicWithToken {
         const subscribersList = subscribes.filter(value => value.topicId === this._item.guid)
         const voteList = votes.filter(value => value.topicId === this._item.guid)
         const userId = getUser(this._token).id
-
         if (subscribersList.length !== 0) {
-
             const isUserSubscribe = subscribersList[0].subscribers.findIndex(value => value === userId) !== -1
             this._item['isSubscribe'] = isUserSubscribe
         } else {
@@ -279,19 +282,19 @@ class GetTopicConvertedImage {
 
     constructor(item) {
         this._item = item
-        
+
     }
 
      getTopicBase64Image() {
        const pic = this._item.picture
        if (pic) {
-        const bitmap = fs.readFileSync(`${path.resolve()}/assets/images/${pic}`);
-        const base64File = new Buffer.from(bitmap).toString('base64');
-       if (base64File) {
-        this._item.picture = base64File
 
-       }
-       
+           const bitmap = fs.readFileSync(`${path.resolve()}/assets/images/${pic}`);
+           const base64File = new Buffer.from(bitmap).toString('base64');
+           if (base64File) {
+               this._item.pictureBase64 = base64File
+
+           }
        }
        return new Response(200, "",  this._item).getResponse()
     }
@@ -338,5 +341,5 @@ module.exports = {
     GetTopicsWithUser,
     GetTopicWithToken,RedesignTopicObject,
     GetSubscribedTopics,
-    GetTopicConvertedImage
+
 }
